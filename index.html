@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syed Mudassar Hasan Wasti — SOC Analyst</title>
+  <meta name="description" content="SOC Analyst portfolio — detection engineering, incident response case work, playbooks, and certifications.">
+  <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- background grid -->
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- top status ticker -->
+  <div class="ticker" role="marquee" aria-label="activity log">
+    <div class="ticker__track" id="tickerTrack"></div>
+  </div>
+
+  <div class="shell">
+
+    <!-- left console rail -->
+    <header class="rail">
+      <div class="rail__id">
+        <img class="rail__avatar" src="img/profile.png" alt="Syed Mudassar Hasan Wasti">
+        <div class="rail__name">Syed Mudassar<br><b>Hasan Wasti</b></div>
+        <div class="rail__role">SOC Analyst<br>Threat Detection &amp; IR</div>
+        <div class="rail__status"><span class="dot"></span> Available for opportunities</div>
+      </div>
+
+      <nav class="rail__nav" id="siteNav">
+        <a href="#home" class="nav-link" data-id="01">Home</a>
+        <a href="#about" class="nav-link" data-id="02">About</a>
+        <a href="#projects" class="nav-link" data-id="03">Projects</a>
+        <a href="#reports" class="nav-link" data-id="04">SOC Reports</a>
+        <a href="#detections" class="nav-link" data-id="05">Detection Rules</a>
+        <a href="#playbooks" class="nav-link" data-id="06">Playbooks</a>
+        <a href="#certs" class="nav-link" data-id="07">Certifications</a>
+      </nav>
+
+      <div class="rail__links">
+        <a href="https://github.com/mudasser9" target="_blank" rel="noopener" class="rail__link">
+          <span>GitHub</span><i>&#8599;</i>
+        </a>
+        <a href="https://www.linkedin.com/in/syed-mudassar-hassan-wasti" target="_blank" rel="noopener" class="rail__link">
+          <span>LinkedIn</span><i>&#8599;</i>
+        </a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="rail__link">
+          <span>Resume</span><i>&#8595;</i>
+        </a>
+        <a href="blog.html" class="rail__link">
+          <span>Blog</span><i>&#8594;</i>
+        </a>
+      </div>
+    </header>
+
+    <button class="rail-toggle" id="railToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <main class="main">
+
+      <!-- HOME -->
+      <section id="home" class="section hero">
+        <p class="eyebrow">CASE 001 // OPEN</p>
+        <h1 class="hero__title">
+          I triage the noise so real threats  don't get through.
+        </h1>
+        <p class="hero__lede">
+          SOC Analyst focused on detection engineering, log-driven investigation, and
+          incident response. This site is my working case file — reports, detection
+          rules, and playbooks I've actually built, not a résumé restated.
+        </p>
+        <div class="hero__actions">
+          <a href="#reports" class="btn btn--primary">Read case reports</a>
+          <a href="#detections" class="btn btn--ghost">View detection rules</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num">MTTD</span>
+            <span class="stat__label">mean time to detect — tracked per case</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">MITRE ATT&amp;CK</span>
+            <span class="stat__label">every rule mapped to a technique ID</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">SIEM</span>
+            <span class="stat__label">Splunk · Sentinel · ELK</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <p class="eyebrow">02 // ABOUT</p>
+        <h2 class="section__title">About</h2>
+        <div class="about">
+          <div class="about__text">
+            <p>
+              I work the queue — alert triage, log correlation, and closing the loop
+              between "something fired" and "here's what happened and why." My focus
+              is Tier 1/2 SOC operations: reducing false positives, writing detections
+              that hold up under real traffic, and documenting incidents so the next
+              analyst doesn't start from zero.
+            </p>
+            <p>
+              I'm most interested in the handoff points other analysts skip — turning
+              a one-off investigation into a reusable detection rule, and turning a
+              messy incident into a playbook someone can follow at 3am.
+            </p>
+          </div>
+          <ul class="about__tools">
+            <li><span>SIEM</span>Splunk, Microsoft Sentinel, Elastic (ELK)</li>
+            <li><span>EDR</span>Microsoft Defender, CrowdStrike</li>
+            <li><span>Frameworks</span>MITRE ATT&amp;CK, NIST 800-61, Cyber Kill Chain</li>
+            <li><span>Scripting</span>Python, PowerShell, KQL, Splunk SPL, Sigma</li>
+            <li><span>Networking</span>Wireshark, tcpdump, Zeek</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <p class="eyebrow">03 // PROJECTS</p>
+        <h2 class="section__title">Projects</h2>
+        <div class="card-grid">
+
+          <article class="card">
+            <p class="card__tag">Home Lab</p>
+            <h3>SOC-in-a-Box Detection Lab</h3>
+            <p>Splunk + Sysmon + a small Windows/Linux range for building and testing
+              detections against live attack simulations before they ever reach production rules.</p>
+            <a class="card__link" href="#" target="_blank" rel="noopener">View repo &rarr;</a>
+          </article>
+
+          <article class="card">
+            <p class="card__tag">Detection Engineering</p>
+            <h3>Sigma Rule Pack</h3>
+            <p>A versioned set of Sigma rules covering common ATT&amp;CK techniques,
+              converted to Splunk SPL and Sentinel KQL with documented false-positive notes.</p>
+            <a class="card__link" href="#detections">View rules &rarr;</a>
+          </article>
+
+          <article class="card">
+            <p class="card__tag">Automation</p>
+            <h3>Alert Enrichment Script</h3>
+            <p>Python tool that pulls IOCs from a SIEM alert and auto-queries VirusTotal,
+              AbuseIPDB, and internal asset inventory, then posts a triage summary.</p>
+            <a class="card__link" href="#" target="_blank" rel="noopener">View repo &rarr;</a>
+          </article>
+
+          <article class="card">
+            <p class="card__tag">Threat Modeling</p>
+            <h3>Threat Modeling Toolkit</h3>
+            <p>Lightweight STRIDE-based workbook for scoping threats on small
+              applications and networks before a full assessment.</p>
+            <a class="card__link" href="https://github.com/mudasser9/threat_modeling_tool" target="_blank" rel="noopener">View repo &rarr;</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SOC REPORTS -->
+      <section id="reports" class="section">
+        <p class="eyebrow">04 // SOC REPORTS</p>
+        <h2 class="section__title">SOC Reports</h2>
+        <p class="section__sub">Sanitized incident write-ups — timeline, root cause, and remediation. No client-identifying data.</p>
+
+        <div class="log-list">
+          <a href="#" class="log-item">
+            <span class="log-item__sev sev--high">HIGH</span>
+            <span class="log-item__title">Brute-force → successful logon on exposed RDP host</span>
+            <span class="log-item__meta">T1110 · T1021.001</span>
+            <span class="log-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="log-item">
+            <span class="log-item__sev sev--med">MED</span>
+            <span class="log-item__title">Phishing email leads to macro-enabled document execution</span>
+            <span class="log-item__meta">T1566.001 · T1204.002</span>
+            <span class="log-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="log-item">
+            <span class="log-item__sev sev--low">LOW</span>
+            <span class="log-item__title">Anomalous PowerShell encoded command flagged, confirmed benign</span>
+            <span class="log-item__meta">T1059.001</span>
+            <span class="log-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="log-item">
+            <span class="log-item__sev sev--high">HIGH</span>
+            <span class="log-item__title">Lateral movement via SMB following initial workstation compromise</span>
+            <span class="log-item__meta">T1021.002 · T1570</span>
+            <span class="log-item__arrow">&rarr;</span>
+          </a>
+        </div>
+        <p class="section__note">Add a new report by dropping a page in <code>/reports/</code> and linking it here.</p>
+      </section>
+
+      <!-- DETECTION RULES -->
+      <section id="detections" class="section">
+        <p class="eyebrow">05 // DETECTION RULES</p>
+        <h2 class="section__title">Detection Rules</h2>
+        <p class="section__sub">Sigma / SPL / KQL rules, each mapped to an ATT&amp;CK technique with tuning notes.</p>
+
+        <div class="rule-table">
+          <div class="rule-row rule-row--head">
+            <span>Rule</span><span>Technique</span><span>Source</span><span>Status</span>
+          </div>
+          <div class="rule-row">
+            <span>Suspicious LSASS Access</span><span>T1003.001</span><span>Sigma → Sentinel</span><span class="status status--live">Live</span>
+          </div>
+          <div class="rule-row">
+            <span>Encoded PowerShell Execution</span><span>T1059.001</span><span>Splunk SPL</span><span class="status status--live">Live</span>
+          </div>
+          <div class="rule-row">
+            <span>New Scheduled Task Persistence</span><span>T1053.005</span><span>Sigma → KQL</span><span class="status status--tuning">Tuning</span>
+          </div>
+          <div class="rule-row">
+            <span>Impossible Travel Logon</span><span>T1078</span><span>Sentinel Analytics</span><span class="status status--live">Live</span>
+          </div>
+          <div class="rule-row">
+            <span>DNS Tunneling Indicators</span><span>T1071.004</span><span>Zeek → Splunk</span><span class="status status--draft">Draft</span>
+          </div>
+        </div>
+        <a class="card__link" href="https://github.com/mudasser9" target="_blank" rel="noopener">Full rule pack on GitHub &rarr;</a>
+      </section>
+
+      <!-- PLAYBOOKS -->
+      <section id="playbooks" class="section">
+        <p class="eyebrow">06 // PLAYBOOKS</p>
+        <h2 class="section__title">Playbooks</h2>
+        <p class="section__sub">Response runbooks, written to be followed under pressure — not read for the first time during an incident.</p>
+
+        <div class="card-grid">
+          <article class="card card--playbook">
+            <h3>Phishing Triage</h3>
+            <p>Header analysis, sender reputation, attachment sandboxing, and user-impact scoping.</p>
+            <a class="card__link" href="#">Open playbook &rarr;</a>
+          </article>
+          <article class="card card--playbook">
+            <h3>Ransomware Containment</h3>
+            <p>Isolation order of operations, evidence preservation, and stakeholder comms template.</p>
+            <a class="card__link" href="#">Open playbook &rarr;</a>
+          </article>
+          <article class="card card--playbook">
+            <h3>Compromised Credential Response</h3>
+            <p>Session kill, password reset flow, conditional access lockdown, and blast-radius check.</p>
+            <a class="card__link" href="#">Open playbook &rarr;</a>
+          </article>
+          <article class="card card--playbook">
+            <h3>Insider Threat Escalation</h3>
+            <p>Evidence handling and legal/HR handoff checklist for sensitive investigations.</p>
+            <a class="card__link" href="#">Open playbook &rarr;</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certs" class="section">
+        <p class="eyebrow">07 // CERTIFICATIONS</p>
+        <h2 class="section__title">Certifications</h2>
+        <div class="cert-list">
+          <div class="cert">
+            <span class="cert__name">ISC2 CC</span>
+            <span class="cert__meta">Add issue date</span>
+          </div>
+          <div class="cert">
+            <span class="cert__name">Google Cybersecurity Professional Certificate</span>
+            <span class="cert__meta">Add issue date</span>
+          </div>
+          <div class="cert">
+            <span class="cert__name">Blue Team Level 1 (BTL1)</span>
+            <span class="cert__meta">Add issue date</span>
+          </div>
+          <div class="cert">
+            <span class="cert__name">Splunk Core Certified User</span>
+            <span class="cert__meta">Add issue date</span>
+          </div>
+        </div>
+        <p class="section__note">Replace these with your actual certifications — swap names, dates, and link each to its verification page.</p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__row">
+          <a href="https://github.com/mudasser9" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/syed-mudassar-hassan-wasti" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://profile.hackthebox.com/profile/019f16f6-bfb5-70d3-9d55-66ff6a57c721" target="_blank" rel="noopener">HackThebox</a>
+          <a href="https://tryhackme.com/p/mudasserhassan9">TryHackme</a>
+          <a href="https://apps.letsdefend.io/user/mudasserhassan9"></a>
+          <a href="https://blueteamlabs.online/home/user/e0b0246374e21196e00133">BlueTeam Labs</a>
+          <a href="https://www.facebook.com/shadworegin">Facebook</a>
+          <a href="https://www.instagram.com/shadworegin12">Instagram</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <p class="footer__note">Built by Syed Mudassar Hasan Wasti · Last updated <span id="lastUpdated"></span></p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
